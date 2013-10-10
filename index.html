@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/assets/ico/favicon.png">
+
+    <title>Geo Dashboard Lab</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="style.css" rel="stylesheet">
+
+    <Link href='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+
+    <!--[if lte IE 8]>
+      <link href='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css' rel='stylesheet' />
+    <![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div id="map-11" class="col-sm-6"></div>
+        <div id="map-12" class="col-sm-6"></div>
+      </div>
+      <div class="row">
+        <div id="map-21" class="col-sm-6"></div>
+        <div id="map-22" class="col-sm-6"></div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="/dist/js/bootstrap.min.js"></script>
+    <script src='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
+    <script type='text/javascript'>
+      var map11 = L.mapbox.map('map-11', 'examples.map-9ijuk24y',
+                               {attributionControl: false})
+          .setView([37.9, -77], 5);
+
+      var map12 = L.mapbox.map('map-12', 'examples.map-y7l23tes',
+                               {attributionControl: false})
+          .setView([37.9, -77], 5);
+
+      var map21 = L.mapbox.map('map-21', 'franckalbinet.map-8qg3im8y',
+                               {attributionControl: false})
+          .setView([37.9, -77], 5);
+
+      var map22 = L.mapbox.map('map-22', 'examples.map-9ijuk24y,examples.npr-stations',
+                               {attributionControl: false})
+          .setView([37.9, -77], 5);
+
+      map11.on('click', function(e) {
+            map11.panTo(e.latlng);
+            map12.panTo(e.latlng);
+            map21.panTo(e.latlng);
+            map22.panTo(e.latlng);
+      });
+
+      map12.on('click', function(e) {
+            map11.panTo(e.latlng);
+            map12.panTo(e.latlng);
+            map21.panTo(e.latlng);
+            map22.panTo(e.latlng);
+      });
+
+      map21.on('click', function(e) {
+            map11.panTo(e.latlng);
+            map12.panTo(e.latlng);
+            map21.panTo(e.latlng);
+            map22.panTo(e.latlng);
+      });
+
+      map22.on('click', function(e) {
+            map11.panTo(e.latlng);
+            map12.panTo(e.latlng);
+            map21.panTo(e.latlng);
+            map22.panTo(e.latlng);
+      });
+
+
+    </script>
+  </body>
+</html>
