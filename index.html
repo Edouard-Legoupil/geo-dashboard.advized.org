@@ -29,12 +29,13 @@
   </head>
 
   <body>
+    <button id="layers" type="button" data-toggle="modal" href="#myModal" class="btn btn-default">
+      <span class="glyphicon glyphicon-globe"></span> Layers
+    </button>
+
     <div class="container">
       <div class="row" id="maps">
         <div id="map-11" class="col-sm-6">
-          <button id="layers" type="button" data-toggle="modal" href="#myModal" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-align-justify"></span> Layer(s)
-          </button>
           <button data-toggle="tooltip" data-placement="top" title="Synchronize map state" id="pushpin" type="button" class="btn btn-success btn-xs" data-toggle="button">
             <span class="glyphicon glyphicon-pushpin"></span>
           </button>
@@ -43,26 +44,32 @@
       </div>
 
       <div class="row" id="timeline">
-        <div class="col-sm-2">
-        <div class="btn-group">
-            <button type="button" class="btn btn-default btn-sm navbar-btn">
+        <div class="col-sm-1">
+          <button type="button" class="btn btn-danger navbar-btn">About
+</button>
+        </div>
+
+        <div class="col-sm-4">
+          <div id="time-button" class="btn-group">
+            <button type="button" class="btn btn-default navbar-btn">
               <span class="glyphicon glyphicon-stop"></span>
             </button>
-            <button type="button" class="btn btn-default btn-sm navbar-btn">
+            <button type="button" class="btn btn-default navbar-btn">
               <span class="glyphicon glyphicon-play"></span>
             </button>
-            <button type="button" class="btn btn-default btn-sm navbar-btn">
+            <button type="button" class="btn btn-default navbar-btn">
               <span class="glyphicon glyphicon-pause"></span>
             </button>
-            <button type="button" class="btn btn-default btn-sm navbar-btn">
+            <button type="button" class="btn btn-default navbar-btn">
               <span class="glyphicon glyphicon-repeat"></span>
             </button>
           </div>
         </div>
-        <div class="col-sm-2">
+
+        <div class="col-sm-3">
           <h3 id="date">4 December 2012</h3>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-4">
           Timeline
         </div>
       </div> 
@@ -100,19 +107,23 @@
     <script src='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
     <script type='text/javascript'>
       var map11 = L.mapbox.map('map-11', 'examples.map-9ijuk24y',
-                               {attributionControl: false})
+                               {attributionControl: false,
+                                zoomControl: false})
           .setView([37.9, -77], 5);
 
       var map12 = L.mapbox.map('map-12', 'examples.map-y7l23tes',
-                               {attributionControl: false})
+                               {attributionControl: false,
+                                zoomControl: false})
           .setView([37.9, -77], 5);
 
       var map21 = L.mapbox.map('map-21', 'franckalbinet.map-8qg3im8y',
-                               {attributionControl: false})
+                               {attributionControl: false,
+                                zoomControl: false})
           .setView([37.9, -77], 5);
 
       var map22 = L.mapbox.map('map-22', 'examples.map-9ijuk24y,examples.npr-stations',
-                               {attributionControl: false})
+                               {attributionControl: false,
+                                zoomControl: false})
           .setView([37.9, -77], 5);
 
       map11.on('click', function(e) {
@@ -150,7 +161,7 @@
 
       $(window).resize(function() {
         winHeight = $(window).height();
-        $(".row#maps").css("height", (winHeight-50)/2);
+        $(".row#maps").css("height", (winHeight-55)/2);
       });
 
     </script>

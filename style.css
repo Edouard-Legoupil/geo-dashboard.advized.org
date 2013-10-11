@@ -1,6 +1,10 @@
 html, body {
   height: 100%;
   background-color: #222;
+  overflow: hidden;
+}
+body.modal-open {
+  margin-right: 0px;
 }
 
 .container {
@@ -16,14 +20,14 @@ html, body {
 }
 .row#timeline {
   margin: 0px 0px;
-  height: 50px;
+  height: 55px;
 }
 div.btn-group {
   margin-left: -13px;
 }
 h3#date {
   color: #ddd;
-  margin: 11px -84px;
+  margin: 11px 0px;
 }
 #map-11, #map-12 {
   /*border-bottom: 3px solid black;*/
@@ -40,8 +44,12 @@ h3#date {
 button#layers {
   position: absolute;
   z-index: 1000;
-  left: 50px;
+  left: 47%;
   top: 0px;
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #191919; 
+  border-radius: 0px 0px 10px 10px
 }
 
 button#pushpin {
@@ -75,6 +83,19 @@ button#pushpin.active {
   bottom: 1px;
 }
 
+.modal {
+  overflow: hidden;
+}
 
+div#time-button button {
+  background-color: #eee;
+  border: 1px solid #aaa; 
+  color: #222;
+}
 
+div#time-button button:hover {
+  background-color: #ccc;
+  border: 1px solid #aaa; 
+  color: #222;
+}
 
