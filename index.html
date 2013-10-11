@@ -30,15 +30,67 @@
 
   <body>
     <div class="container">
-      <div class="row">
-        <div id="map-11" class="col-sm-6"></div>
+      <div class="row" id="maps">
+        <div id="map-11" class="col-sm-6">
+          <button id="layers" type="button" data-toggle="modal" href="#myModal" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-align-justify"></span> Layer(s)
+          </button>
+          <button data-toggle="tooltip" data-placement="top" title="Synchronize map state" id="pushpin" type="button" class="btn btn-success btn-xs" data-toggle="button">
+            <span class="glyphicon glyphicon-pushpin"></span>
+          </button>
+        </div>
         <div id="map-12" class="col-sm-6"></div>
       </div>
-      <div class="row">
+
+      <div class="row" id="timeline">
+        <div class="col-sm-2">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm navbar-btn">
+              <span class="glyphicon glyphicon-stop"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm navbar-btn">
+              <span class="glyphicon glyphicon-play"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm navbar-btn">
+              <span class="glyphicon glyphicon-pause"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm navbar-btn">
+              <span class="glyphicon glyphicon-repeat"></span>
+            </button>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <h3 id="date">4 December 2012</h3>
+        </div>
+        <div class="col-sm-8">
+          Timeline
+        </div>
+      </div> 
+
+      <div class="row" id="maps">
         <div id="map-21" class="col-sm-6"></div>
         <div id="map-22" class="col-sm-6"></div>
       </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -91,6 +143,15 @@
             map22.panTo(e.latlng);
       });
 
+      $("button").click(function(e) {
+             //do something
+             /*e.stopPropagation();*/
+      })
+
+      $(window).resize(function() {
+        winHeight = $(window).height();
+        $(".row#maps").css("height", (winHeight-50)/2);
+      });
 
     </script>
   </body>
