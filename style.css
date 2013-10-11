@@ -52,6 +52,32 @@ button#layers {
   border-radius: 0px 0px 10px 10px
 }
 
+button#layers:hover {
+  position: absolute;
+  z-index: 1000;
+  left: 47%;
+  top: 0px;
+  background-color: #333;
+  color: #eee;
+  border: 1px solid #191919; 
+  border-radius: 0px 0px 10px 10px
+}
+
+
+button#about {
+  position: absolute;
+  z-index: 1000;
+  width: 85px;
+  left: 47%;
+  bottom: 0px;
+  /*background-color: #222;
+  color: #eee;
+  border: 1px solid #191919; */
+  border-radius: 10px 10px 0px 0px
+}
+
+
+
 button#pushpin {
   position: absolute;
   border-radius: 15px 0px 0px 0px;
